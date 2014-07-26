@@ -22,8 +22,11 @@
         "symfony/twig-bridge": "~2.3",
         "symfony/validator": "~2.3"
     },
+    "require-dev": {
+        "phpunit/phpunit": "4.1.*"
+    },
     "autoload": {
-        "psr-0": { "": "src/" }
+        "psr-0": { "": "main/" }
     },
     "extra": {
         "branch-alias": {

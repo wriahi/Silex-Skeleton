@@ -1,6 +1,6 @@
 <?php
 
-require_once '../vendor/autoload.php';
+require_once __DIR__.'/../vendor/autoload.php';
 
 use Silex\WebTestCase;
 
@@ -19,10 +19,19 @@ class pageTest extends WebTestCase
        return $app;
     }
 
+    /* quick and dirty check */
+    public function testFront()
+    {
+        $front  = file_get_contents('http://localhost/silex.dev/silex/web/index.php/test');
+        $this->assertEquals($front,'Hi');
+    }
+
+    /* we should use this instead (once we have routing and cleaner controllers setup).
     public function testIndex()
     {
         $client = $this->createClient();
         $client->request('GET','/');
         $this->assertTrue($client->getResponse()->isOk());
     }
+    */
 }
